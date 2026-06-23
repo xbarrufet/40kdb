@@ -1,0 +1,161 @@
+{
+  "faction": "Necrons",
+  "slug": "necrons",
+  "units_count": 22,
+  "units": [
+    {
+      "name": "C’tan Shard of the Deceiver",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/ctan-shard-of-the-deceiver",
+      "slug": "ctan-shard-of-the-deceiver",
+      "points": "330"
+    },
+    {
+      "name": "C’tan Shard of the Nightbringer",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/ctan-shard-of-the-nightbringer",
+      "slug": "ctan-shard-of-the-nightbringer",
+      "points": "360"
+    },
+    {
+      "name": "C’tan Shard of the Void Dragon",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/ctan-shard-of-the-void-dragon",
+      "slug": "ctan-shard-of-the-void-dragon",
+      "points": "345"
+    },
+    {
+      "name": "Catacomb Command Barge",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/catacomb-command-barge",
+      "slug": "catacomb-command-barge",
+      "points": "120"
+    },
+    {
+      "name": "Chronomancer",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/chronomancer",
+      "slug": "chronomancer",
+      "points": "80"
+    },
+    {
+      "name": "Geomancer",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/geomancer",
+      "slug": "geomancer",
+      "points": "75"
+    },
+    {
+      "name": "Immortals",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/necrons/units/immortals",
+      "slug": "immortals",
+      "points": "70"
+    },
+    {
+      "name": "Necron Warriors",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/necrons/units/necron-warriors",
+      "slug": "necron-warriors",
+      "points": "80"
+    },
+    {
+      "name": "Lokhust Destroyers",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/necrons/units/lokhust-destroyers",
+      "slug": "lokhust-destroyers",
+      "points": "40"
+    },
+    {
+      "name": "Lokhust Heavy Destroyers",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/necrons/units/lokhust-heavy-destroyers",
+      "slug": "lokhust-heavy-destroyers",
+      "points": "50"
+    },
+    {
+      "name": "Tomb Blades",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/necrons/units/tomb-blades",
+      "slug": "tomb-blades",
+      "points": "70"
+    },
+    {
+      "name": "Canoptek Macrocytes",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/canoptek-macrocytes",
+      "slug": "canoptek-macrocytes",
+      "points": "70"
+    },
+    {
+      "name": "Canoptek Scarab Swarms",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/canoptek-scarab-swarms",
+      "slug": "canoptek-scarab-swarms",
+      "points": "40"
+    },
+    {
+      "name": "Canoptek Tomb Crawlers",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/canoptek-tomb-crawlers",
+      "slug": "canoptek-tomb-crawlers",
+      "points": "50"
+    },
+    {
+      "name": "Doom Scythe",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/necrons/units/doom-scythe",
+      "slug": "doom-scythe",
+      "points": "200"
+    },
+    {
+      "name": "Monolith",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/necrons/units/monolith",
+      "slug": "monolith",
+      "points": "420"
+    },
+    {
+      "name": "Obelisk",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/necrons/units/obelisk",
+      "slug": "obelisk",
+      "points": "280"
+    },
+    {
+      "name": "Seraptek Heavy Construct",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/necrons/units/seraptek-heavy-construct",
+      "slug": "seraptek-heavy-construct",
+      "points": "540"
+    },
+    {
+      "name": "Ghost Ark",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/necrons/units/ghost-ark",
+      "slug": "ghost-ark",
+      "points": "100"
+    },
+    {
+      "name": "Annihilation Barge",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/necrons/units/annihilation-barge",
+      "slug": "annihilation-barge",
+      "points": "95"
+    },
+    {
+      "name": "Canoptek Doomstalker",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/necrons/units/canoptek-doomstalker",
+      "slug": "canoptek-doomstalker",
+      "points": "140"
+    },
+    {
+      "name": "Canoptek Reanimator",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/necrons/units/canoptek-reanimator",
+      "slug": "canoptek-reanimator",
+      "points": "70"
+    }
+  ]
+}

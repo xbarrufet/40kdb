@@ -1,0 +1,182 @@
+{
+  "faction": "Orks",
+  "slug": "orks",
+  "units_count": 25,
+  "units": [
+    {
+      "name": "Boss Snikrot",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/orks/units/boss-snikrot",
+      "slug": "boss-snikrot",
+      "points": "75"
+    },
+    {
+      "name": "Ghazghkull Thraka",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/orks/units/ghazghkull-thraka",
+      "slug": "ghazghkull-thraka",
+      "points": "235"
+    },
+    {
+      "name": "Mozrog Skragbad",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/orks/units/mozrog-skragbad",
+      "slug": "mozrog-skragbad",
+      "points": "125"
+    },
+    {
+      "name": "Bannernob",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/orks/units/bannernob",
+      "slug": "bannernob",
+      "points": "50"
+    },
+    {
+      "name": "Beastboss",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/orks/units/beastboss",
+      "slug": "beastboss",
+      "points": "80"
+    },
+    {
+      "name": "Beastboss on Squigosaur",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/orks/units/beastboss-on-squigosaur",
+      "slug": "beastboss-on-squigosaur",
+      "points": "95"
+    },
+    {
+      "name": "Beast Snagga Boyz",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/orks/units/beast-snagga-boyz",
+      "slug": "beast-snagga-boyz",
+      "points": "90"
+    },
+    {
+      "name": "Boyz",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/orks/units/boyz",
+      "slug": "boyz",
+      "points": "75"
+    },
+    {
+      "name": "Squighog Boyz",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/orks/units/squighog-boyz",
+      "slug": "squighog-boyz",
+      "points": "140"
+    },
+    {
+      "name": "Warbikers",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/orks/units/warbikers",
+      "slug": "warbikers",
+      "points": "60"
+    },
+    {
+      "name": "Wartrakk",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/orks/units/wartrakk",
+      "slug": "wartrakk",
+      "points": "60"
+    },
+    {
+      "name": "Breaka Boyz",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/orks/units/breaka-boyz",
+      "slug": "breaka-boyz",
+      "points": "125"
+    },
+    {
+      "name": "Burna Boyz",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/orks/units/burna-boyz",
+      "slug": "burna-boyz",
+      "points": "60"
+    },
+    {
+      "name": "Flash Gitz",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/orks/units/flash-gitz",
+      "slug": "flash-gitz",
+      "points": "75"
+    },
+    {
+      "name": "Blitza-bommer",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/orks/units/blitza-bommer",
+      "slug": "blitza-bommer",
+      "points": "105"
+    },
+    {
+      "name": "Burna-bommer",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/orks/units/burna-bommer",
+      "slug": "burna-bommer",
+      "points": "115"
+    },
+    {
+      "name": "Dakkajet",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/orks/units/dakkajet",
+      "slug": "dakkajet",
+      "points": "125"
+    },
+    {
+      "name": "Gargantuan Squiggoth",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/orks/units/gargantuan-squiggoth",
+      "slug": "gargantuan-squiggoth",
+      "points": "440"
+    },
+    {
+      "name": "Gorkanaut",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/orks/units/gorkanaut",
+      "slug": "gorkanaut",
+      "points": "255"
+    },
+    {
+      "name": "Morkanaut",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/orks/units/morkanaut",
+      "slug": "morkanaut",
+      "points": "270"
+    },
+    {
+      "name": "Trukk",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/orks/units/trukk",
+      "slug": "trukk",
+      "points": "65"
+    },
+    {
+      "name": "Battlewagon",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/orks/units/battlewagon",
+      "slug": "battlewagon",
+      "points": "145"
+    },
+    {
+      "name": "Big’ed Bossbunka",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/orks/units/biged-bossbunka",
+      "slug": "biged-bossbunka",
+      "points": "135"
+    },
+    {
+      "name": "Boomdakka Snazzwagon",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/orks/units/boomdakka-snazzwagon",
+      "slug": "boomdakka-snazzwagon",
+      "points": "70"
+    },
+    {
+      "name": "Big Mek Dakkarig",
+      "category": "Other",
+      "url": "https://www.40k.app/factions/orks/units/big-mek-dakkarig",
+      "slug": "big-mek-dakkarig",
+      "points": "100"
+    }
+  ]
+}

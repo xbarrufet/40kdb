@@ -1,0 +1,6 @@
+@_40kdb_HostAddress = http://localhost:5249
+
+GET {{_40kdb_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

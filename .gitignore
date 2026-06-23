@@ -1,0 +1,33 @@
+## .NET
+bin/
+obj/
+*.user
+*.suo
+*.cache
+*.dll
+*.exe
+*.pdb
+*.msi
+*.msix
+*.msm
+*.msp
+.vs/
+*.DotSettings.user
+appsettings.*.local.json
+
+## Node / Vue
+node_modules/
+dist/
+.env
+.env.local
+.env.*.local
+
+## OS
+.DS_Store
+Thumbs.db
+
+## IDE
+.idea/
+*.swp
+*.swo
+*~

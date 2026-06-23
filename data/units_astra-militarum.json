@@ -1,0 +1,189 @@
+{
+  "faction": "Astra Militarum",
+  "slug": "astra-militarum",
+  "units_count": 26,
+  "units": [
+    {
+      "name": "Commissar Graves",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/astra-militarum/units/commissar-graves",
+      "slug": "commissar-graves",
+      "points": "125"
+    },
+    {
+      "name": "Commissar Graves on Foot",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/astra-militarum/units/commissar-graves-on-foot",
+      "slug": "commissar-graves-on-foot",
+      "points": "65"
+    },
+    {
+      "name": "Commissar Yarrick",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/astra-militarum/units/commissar-yarrick",
+      "slug": "commissar-yarrick",
+      "points": "130"
+    },
+    {
+      "name": "Cadian Castellan",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/astra-militarum/units/cadian-castellan",
+      "slug": "cadian-castellan",
+      "points": "55"
+    },
+    {
+      "name": "Cadian Command Squad",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/astra-militarum/units/cadian-command-squad",
+      "slug": "cadian-command-squad",
+      "points": "65"
+    },
+    {
+      "name": "Catachan Command Squad",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/astra-militarum/units/catachan-command-squad",
+      "slug": "catachan-command-squad",
+      "points": "60"
+    },
+    {
+      "name": "Cadian Shock Troops",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/astra-militarum/units/cadian-shock-troops",
+      "slug": "cadian-shock-troops",
+      "points": "75"
+    },
+    {
+      "name": "Catachan Jungle Fighters",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/astra-militarum/units/catachan-jungle-fighters",
+      "slug": "catachan-jungle-fighters",
+      "points": "75"
+    },
+    {
+      "name": "Death Korps of Krieg",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/astra-militarum/units/death-korps-of-krieg",
+      "slug": "death-korps-of-krieg",
+      "points": "75"
+    },
+    {
+      "name": "Attilan Rough Riders",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/astra-militarum/units/attilan-rough-riders",
+      "slug": "attilan-rough-riders",
+      "points": "60"
+    },
+    {
+      "name": "Death Riders",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/astra-militarum/units/death-riders",
+      "slug": "death-riders",
+      "points": "60"
+    },
+    {
+      "name": "Artillery Team",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/astra-militarum/units/artillery-team",
+      "slug": "artillery-team",
+      "points": "95"
+    },
+    {
+      "name": "Bullgryn Squad",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/astra-militarum/units/bullgryn-squad",
+      "slug": "bullgryn-squad",
+      "points": "90"
+    },
+    {
+      "name": "Cadian Heavy Weapons Squad",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/astra-militarum/units/cadian-heavy-weapons-squad",
+      "slug": "cadian-heavy-weapons-squad",
+      "points": "65"
+    },
+    {
+      "name": "Avenger Strike Fighter",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/astra-militarum/units/avenger-strike-fighter",
+      "slug": "avenger-strike-fighter",
+      "points": "130"
+    },
+    {
+      "name": "Valkyrie",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/astra-militarum/units/valkyrie",
+      "slug": "valkyrie",
+      "points": "170"
+    },
+    {
+      "name": "Baneblade",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/astra-militarum/units/baneblade",
+      "slug": "baneblade",
+      "points": "450"
+    },
+    {
+      "name": "Banehammer",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/astra-militarum/units/banehammer",
+      "slug": "banehammer",
+      "points": "420"
+    },
+    {
+      "name": "Banesword",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/astra-militarum/units/banesword",
+      "slug": "banesword",
+      "points": "450"
+    },
+    {
+      "name": "Centaur RSV",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/astra-militarum/units/centaur-rsv",
+      "slug": "centaur-rsv",
+      "points": "75"
+    },
+    {
+      "name": "Chimera",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/astra-militarum/units/chimera",
+      "slug": "chimera",
+      "points": "85"
+    },
+    {
+      "name": "Taurox",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/astra-militarum/units/taurox",
+      "slug": "taurox",
+      "points": "75"
+    },
+    {
+      "name": "Armoured Sentinels",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/astra-militarum/units/armoured-sentinels",
+      "slug": "armoured-sentinels",
+      "points": "65"
+    },
+    {
+      "name": "Basilisk",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/astra-militarum/units/basilisk",
+      "slug": "basilisk",
+      "points": "115"
+    },
+    {
+      "name": "Cyclops Demolition Vehicle",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/astra-militarum/units/cyclops-demolition-vehicle",
+      "slug": "cyclops-demolition-vehicle",
+      "points": "40"
+    },
+    {
+      "name": "Aegis Defence Line",
+      "category": "Fortifications",
+      "url": "https://www.40k.app/factions/astra-militarum/units/aegis-defence-line",
+      "slug": "aegis-defence-line",
+      "points": "145"
+    }
+  ]
+}

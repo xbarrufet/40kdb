@@ -1,0 +1,175 @@
+{
+  "faction": "Blood Angels",
+  "slug": "blood-angels",
+  "units_count": 24,
+  "units": [
+    {
+      "name": "Astorath",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/blood-angels/units/astorath",
+      "slug": "astorath",
+      "points": "85"
+    },
+    {
+      "name": "Chief Librarian Mephiston",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/blood-angels/units/chief-librarian-mephiston",
+      "slug": "chief-librarian-mephiston",
+      "points": "110"
+    },
+    {
+      "name": "Commander Dante",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/blood-angels/units/commander-dante",
+      "slug": "commander-dante",
+      "points": "125"
+    },
+    {
+      "name": "Blood Angels Captain",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/blood-angels/units/blood-angels-captain",
+      "slug": "blood-angels-captain",
+      "points": "80"
+    },
+    {
+      "name": "Death Company Captain",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/blood-angels/units/death-company-captain",
+      "slug": "death-company-captain",
+      "points": "70"
+    },
+    {
+      "name": "Death Company Captain with Jump Pack",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/blood-angels/units/death-company-captain-with-jump-pack",
+      "slug": "death-company-captain-with-jump-pack",
+      "points": "75"
+    },
+    {
+      "name": "Assault Intercessor Squad",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/space-marines/units/assault-intercessor-squad",
+      "slug": "assault-intercessor-squad",
+      "points": "75"
+    },
+    {
+      "name": "Heavy Intercessor Squad",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/space-marines/units/heavy-intercessor-squad",
+      "slug": "heavy-intercessor-squad",
+      "points": "100"
+    },
+    {
+      "name": "Intercessor Squad",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/space-marines/units/intercessor-squad",
+      "slug": "intercessor-squad",
+      "points": "80"
+    },
+    {
+      "name": "Invader ATV",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/space-marines/units/invader-atv",
+      "slug": "invader-atv",
+      "points": "60"
+    },
+    {
+      "name": "Outrider Squad",
+      "category": "Mounted",
+      "url": "https://www.40k.app/factions/space-marines/units/outrider-squad",
+      "slug": "outrider-squad",
+      "points": "70"
+    },
+    {
+      "name": "Death Company Marines",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/blood-angels/units/death-company-marines",
+      "slug": "death-company-marines",
+      "points": "85"
+    },
+    {
+      "name": "Death Company Marines with Bolt Rifles",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/blood-angels/units/death-company-marines-with-bolt-rifles",
+      "slug": "death-company-marines-with-bolt-rifles",
+      "points": "80"
+    },
+    {
+      "name": "Death Company Marines with Jump Packs",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/blood-angels/units/death-company-marines-with-jump-packs",
+      "slug": "death-company-marines-with-jump-packs",
+      "points": "120"
+    },
+    {
+      "name": "Stormhawk Interceptor",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/space-marines/units/stormhawk-interceptor",
+      "slug": "stormhawk-interceptor",
+      "points": "155"
+    },
+    {
+      "name": "Stormtalon Gunship",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/space-marines/units/stormtalon-gunship",
+      "slug": "stormtalon-gunship",
+      "points": "165"
+    },
+    {
+      "name": "Thunderhawk Gunship",
+      "category": "Aircraft",
+      "url": "https://www.40k.app/factions/space-marines/units/thunderhawk-gunship",
+      "slug": "thunderhawk-gunship",
+      "points": "840"
+    },
+    {
+      "name": "Astraeus",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/space-marines/units/astraeus",
+      "slug": "astraeus",
+      "points": "525"
+    },
+    {
+      "name": "Drop Pod",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/space-marines/units/drop-pod",
+      "slug": "drop-pod",
+      "points": "70"
+    },
+    {
+      "name": "Impulsor",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/space-marines/units/impulsor",
+      "slug": "impulsor",
+      "points": "80"
+    },
+    {
+      "name": "Razorback",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/space-marines/units/razorback",
+      "slug": "razorback",
+      "points": "95"
+    },
+    {
+      "name": "Baal Predator",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/blood-angels/units/baal-predator",
+      "slug": "baal-predator",
+      "points": "125"
+    },
+    {
+      "name": "Death Company Dreadnought",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/blood-angels/units/death-company-dreadnought",
+      "slug": "death-company-dreadnought",
+      "points": "150"
+    },
+    {
+      "name": "Ballistus Dreadnought",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/space-marines/units/ballistus-dreadnought",
+      "slug": "ballistus-dreadnought",
+      "points": "150"
+    }
+  ]
+}

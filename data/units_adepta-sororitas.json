@@ -1,0 +1,112 @@
+{
+  "faction": "Adepta Sororitas",
+  "slug": "adepta-sororitas",
+  "units_count": 15,
+  "units": [
+    {
+      "name": "Aestred Thurga and Agathae Dolan",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/aestred-thurga-and-agathae-dolan",
+      "slug": "aestred-thurga-and-agathae-dolan",
+      "points": "80"
+    },
+    {
+      "name": "Daemonifuge",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/daemonifuge",
+      "slug": "daemonifuge",
+      "points": "85"
+    },
+    {
+      "name": "Intranzia Fraye",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/intranzia-fraye",
+      "slug": "intranzia-fraye",
+      "points": "150"
+    },
+    {
+      "name": "Canoness",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/canoness",
+      "slug": "canoness",
+      "points": "60"
+    },
+    {
+      "name": "Canoness with Jump Pack",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/canoness-with-jump-pack",
+      "slug": "canoness-with-jump-pack",
+      "points": "75"
+    },
+    {
+      "name": "Dialogus",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/dialogus",
+      "slug": "dialogus",
+      "points": "40"
+    },
+    {
+      "name": "Battle Sisters Squad",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/battle-sisters-squad",
+      "slug": "battle-sisters-squad",
+      "points": "100"
+    },
+    {
+      "name": "Arco-flagellants",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/arco-flagellants",
+      "slug": "arco-flagellants",
+      "points": "50"
+    },
+    {
+      "name": "Celestian Insidiants",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/celestian-insidiants",
+      "slug": "celestian-insidiants",
+      "points": "120"
+    },
+    {
+      "name": "Celestian Sacresants",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/celestian-sacresants",
+      "slug": "celestian-sacresants",
+      "points": "75"
+    },
+    {
+      "name": "Immolator",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/immolator",
+      "slug": "immolator",
+      "points": "110"
+    },
+    {
+      "name": "Sororitas Rhino",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/sororitas-rhino",
+      "slug": "sororitas-rhino",
+      "points": "75"
+    },
+    {
+      "name": "Castigator",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/castigator",
+      "slug": "castigator",
+      "points": "165"
+    },
+    {
+      "name": "Exorcist",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/exorcist",
+      "slug": "exorcist",
+      "points": "180"
+    },
+    {
+      "name": "Mortifiers",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/adepta-sororitas/units/mortifiers",
+      "slug": "mortifiers",
+      "points": "70"
+    }
+  ]
+}

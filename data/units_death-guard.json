@@ -1,0 +1,105 @@
+{
+  "faction": "Death Guard",
+  "slug": "death-guard",
+  "units_count": 14,
+  "units": [
+    {
+      "name": "Mortarion",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/death-guard/units/mortarion",
+      "slug": "mortarion",
+      "points": "400"
+    },
+    {
+      "name": "Typhus",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/death-guard/units/typhus",
+      "slug": "typhus",
+      "points": "100"
+    },
+    {
+      "name": "Biologus Putrifier",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/death-guard/units/biologus-putrifier",
+      "slug": "biologus-putrifier",
+      "points": "60"
+    },
+    {
+      "name": "Daemon Prince of Nurgle",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/death-guard/units/daemon-prince-of-nurgle",
+      "slug": "daemon-prince-of-nurgle",
+      "points": "195"
+    },
+    {
+      "name": "Daemon Prince of Nurgle with Wings",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/death-guard/units/daemon-prince-of-nurgle-with-wings",
+      "slug": "daemon-prince-of-nurgle-with-wings",
+      "points": "170"
+    },
+    {
+      "name": "Plague Marines",
+      "category": "Battleline",
+      "url": "https://www.40k.app/factions/death-guard/units/plague-marines",
+      "slug": "plague-marines",
+      "points": "90"
+    },
+    {
+      "name": "Blightlord Terminators",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/death-guard/units/blightlord-terminators",
+      "slug": "blightlord-terminators",
+      "points": "115"
+    },
+    {
+      "name": "Chaos Spawn",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/death-guard/units/chaos-spawn",
+      "slug": "chaos-spawn",
+      "points": "80"
+    },
+    {
+      "name": "Deathshroud Terminators",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/death-guard/units/deathshroud-terminators",
+      "slug": "deathshroud-terminators",
+      "points": "160"
+    },
+    {
+      "name": "Chaos Rhino",
+      "category": "Dedicated Transports",
+      "url": "https://www.40k.app/factions/death-guard/units/chaos-rhino",
+      "slug": "chaos-rhino",
+      "points": "85"
+    },
+    {
+      "name": "Chaos Land Raider",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/death-guard/units/chaos-land-raider",
+      "slug": "chaos-land-raider",
+      "points": "220"
+    },
+    {
+      "name": "Chaos Predator Annihilator",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/death-guard/units/chaos-predator-annihilator",
+      "slug": "chaos-predator-annihilator",
+      "points": "135"
+    },
+    {
+      "name": "Chaos Predator Destructor",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/death-guard/units/chaos-predator-destructor",
+      "slug": "chaos-predator-destructor",
+      "points": "145"
+    },
+    {
+      "name": "Miasmic Malignifier",
+      "category": "Fortifications",
+      "url": "https://www.40k.app/factions/death-guard/units/miasmic-malignifier",
+      "slug": "miasmic-malignifier",
+      "points": "105"
+    }
+  ]
+}
