@@ -1,16 +1,26 @@
 <template>
-  <div class="min-h-screen bg-gray-900 text-white">
-    <header class="bg-gray-800 shadow-lg">
-      <div class="container mx-auto px-4 py-6">
-        <h1 class="text-3xl font-bold text-amber-400">40KDB</h1>
-        <p class="text-gray-400">Warhammer 40,000 Database</p>
+  <div class="min-h-screen bg-gray-900 text-white flex flex-col">
+    <TopBar />
+    <div class="flex flex-1 overflow-hidden">
+      <Sidebar />
+      <div class="flex-1 flex flex-col overflow-hidden">
+        <BreadcrumbBar />
+        <main class="flex-1 overflow-auto p-6">
+          <router-view />
+        </main>
       </div>
-    </header>
-    <main class="container mx-auto px-4 py-8">
-      <p class="text-gray-300">Welcome to the 40K miniature database.</p>
-    </main>
+    </div>
+    <ToastNotification ref="toast" />
   </div>
 </template>
 
 <script setup>
+import { ref, provide } from 'vue'
+import TopBar from './components/TopBar.vue'
+import Sidebar from './components/Sidebar.vue'
+import BreadcrumbBar from './components/BreadcrumbBar.vue'
+import ToastNotification from './components/ToastNotification.vue'
+
+const toast = ref(null)
+provide('toast', toast)
 </script>
