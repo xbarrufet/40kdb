@@ -35,6 +35,35 @@ There is an "Add" button that opens the add modal.
 ## Unit Collection Page (Miniatures)
 It shows all the minis and its state. Each row can be edited changing the state or any other field, or deleted.
 
+### Mass Update
+Each row has a checkbox in the first column. The header contains:
+- A "select all / select none" toggle checkbox
+- An "Edit (x)" button (visible only when x > 0), where `x` is the number of selected minis
+
+Selected rows have a distinct background color.
+
+**Selection rules:**
+- Selections are tied to miniatureId, persist across sort and after modal close
+- Unlimited selection, no cap
+- No pagination (all minis rendered on one page)
+
+**Modal:**
+- Title: "Edit X miniatures"
+- Same fields as individual edit: State, Edition, BasePainted, BaseMagnetized, Original, Proxy, DecalsApplied
+- Pre-filled with values from the first selected mini
+- All fields overwrite every selected mini on save
+- Enter to save, Escape to cancel
+- Save button disabled during request
+- No API call or toast if nothing changed
+
+**API:**
+- `PUT /api/miniatures/batch` with body `{ ids: int[], changes: {...} }`
+- Failing minis are skipped silently
+- Table re-fetches from server after save
+
+**Toast:**
+- Single toast: "X miniatures updated"
+
 ## How to add a miniature
 ### Way 1
 In the Collection faction there is a Add button that opens a modal showing:

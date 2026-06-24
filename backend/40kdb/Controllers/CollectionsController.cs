@@ -125,6 +125,28 @@ public class CollectionsController : ControllerBase
         return Ok();
     }
 
+    [HttpPut("batch")]
+    public async Task<IActionResult> BatchUpdateMiniatures([FromBody] BatchUpdateMiniaturesRequest request)
+    {
+        var miniatures = await _db.Miniatures
+            .Where(m => request.Ids.Contains(m.MiniatureId))
+            .ToListAsync();
+
+        foreach (var miniature in miniatures)
+        {
+            miniature.State = request.Changes.State;
+            miniature.Edition = request.Changes.Edition;
+            miniature.BasePainted = request.Changes.BasePainted;
+            miniature.BaseMagnetized = request.Changes.BaseMagnetized;
+            miniature.Original = request.Changes.Original;
+            miniature.Proxy = request.Changes.Proxy;
+            miniature.DecalsApplied = request.Changes.DecalsApplied;
+        }
+
+        await _db.SaveChangesAsync();
+        return Ok();
+    }
+
     [HttpPut("{id}")]
     public async Task<IActionResult> UpdateMiniature(int id, [FromBody] UpdateMiniatureRequest request)
     {
@@ -175,5 +197,11 @@ public class CollectionsController : ControllerBase
         public bool Original { get; set; } = true;
         public bool Proxy { get; set; } = false;
         public bool DecalsApplied { get; set; } = false;
+    }
+
+    public class BatchUpdateMiniaturesRequest
+    {
+        public List<int> Ids { get; set; } = new();
+        public UpdateMiniatureRequest Changes { get; set; } = new();
     }
 }
