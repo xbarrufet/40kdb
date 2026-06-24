@@ -1,0 +1,11 @@
+**/.git
+**/.vs
+**/bin
+**/obj
+**/.DS_Store
+**/*.user
+**/node_modules
+**/dist
+backend/40kdb/40kdb.db
+backend/40kdb/40kdb.db-shm
+backend/40kdb/40kdb.db-wal
