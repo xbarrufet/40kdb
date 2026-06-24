@@ -61,3 +61,29 @@ cd ~/40kdb
 docker compose -f docker-compose.prod.yml pull
 docker compose -f docker-compose.prod.yml up -d
 ```
+
+## Backups
+
+### Setup
+
+```bash
+scp -r scripts/ xavier@192.168.1.100:~/40kdb/
+ssh xavier@192.168.1.100
+chmod +x ~/40kdb/scripts/*.sh
+~/40kdb/scripts/install-cron.sh
+```
+
+Backups run daily at 2:00 AM, but only if the DB was modified that day. The last 5 backups are kept in `~/40kdb/backups/`.
+
+### Manual Backup
+
+```bash
+~/40kdb/scripts/backup.sh
+```
+
+### Restore
+
+```bash
+~/40kdb/scripts/restore.sh          # list available backups
+~/40kdb/scripts/restore.sh /path/to/40kdb_20260624_143000.db
+```

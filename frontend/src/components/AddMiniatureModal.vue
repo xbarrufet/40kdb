@@ -1,7 +1,9 @@
 <template>
   <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-50" @click.self="$emit('close')">
-    <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 w-full max-w-md shadow-2xl">
-      <h2 class="text-xl font-bold text-amber-400 mb-5">Add Miniatures</h2>
+    <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 w-full max-w-lg shadow-2xl">
+      <h2 class="text-xl font-bold text-amber-400 mb-5">
+        {{ unitPreselected ? `Add ${preselectedUnitName}` : 'Add Miniatures' }}
+      </h2>
 
       <div class="space-y-4">
         <div v-if="!unitPreselected">
@@ -62,7 +64,7 @@
           />
         </div>
 
-        <div class="flex gap-6">
+        <div class="flex flex-wrap gap-x-6 gap-y-3">
           <label class="flex items-center gap-2 cursor-pointer">
             <input type="checkbox" v-model="basePainted" class="accent-amber-400 rounded" />
             <span class="text-sm text-gray-300">Base Painted</span>
@@ -123,6 +125,11 @@ const original = ref(true)
 const proxy = ref(false)
 const decalsApplied = ref(false)
 const unitPreselected = computed(() => !!props.unitId)
+const preselectedUnitName = computed(() => {
+  if (!props.unitId) return ''
+  const unit = units.value.find(u => u.unitId === props.unitId)
+  return unit?.name || ''
+})
 
 const unitsByCategory = computed(() => {
   const grouped = {}
