@@ -1,0 +1,9 @@
+**/.git
+**/.vs
+**/bin
+**/obj
+**/.DS_Store
+**/*.user
+40kdb.db
+40kdb.db-shm
+40kdb.db-wal

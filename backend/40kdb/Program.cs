@@ -10,14 +10,17 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 });
 builder.Services.AddEndpointsApiExplorer();
 
+var dbPath = builder.Configuration.GetConnectionString("DefaultConnection") ?? "Data Source=40kdb.db";
 builder.Services.AddDbContext<AppDbContext>(options =>
-    options.UseSqlite("Data Source=40kdb.db"));
+    options.UseSqlite(dbPath));
 
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowFrontend", policy =>
     {
-        policy.WithOrigins("http://localhost:4000")
+        var origins = builder.Configuration.GetSection("CorsOrigins").Get<string[]>()
+                      ?? new[] { "http://localhost:4000" };
+        policy.WithOrigins(origins)
               .AllowAnyHeader()
               .AllowAnyMethod();
     });
