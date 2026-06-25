@@ -1,5 +1,5 @@
 <template>
-  <div class="max-w-5xl space-y-8">
+  <div class="space-y-8">
     <ActiveProjects />
     <CollectionStats />
   </div>

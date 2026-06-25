@@ -2,6 +2,7 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using _40kdb.Data;
 
@@ -10,9 +11,11 @@ using _40kdb.Data;
 namespace _40kdb.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260625194833_AddWargear")]
+    partial class AddWargear
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "9.0.17");
@@ -67,9 +70,6 @@ namespace _40kdb.Migrations
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("BasePainted")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<bool>("Champion")
                         .HasColumnType("INTEGER");
 
                     b.Property<bool>("DecalsApplied")

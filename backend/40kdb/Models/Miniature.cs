@@ -20,4 +20,6 @@ public class Miniature
     public bool Original { get; set; } = true;
     public bool Proxy { get; set; } = false;
     public bool DecalsApplied { get; set; } = false;
+    public string Wargear { get; set; } = "";
+    public bool Champion { get; set; } = false;
 }

@@ -1,11 +1,16 @@
 <template>
   <div class="min-h-screen bg-gray-900 text-white flex flex-col">
     <TopBar />
-    <div class="flex flex-1 overflow-hidden">
+    <div class="flex flex-1 overflow-hidden relative">
+      <div
+        v-if="sidebarOpen"
+        class="fixed inset-0 bg-black/50 z-30 md:hidden"
+        @click="sidebarOpen = false"
+      ></div>
       <Sidebar />
       <div class="flex-1 flex flex-col overflow-hidden">
         <BreadcrumbBar />
-        <main class="flex-1 overflow-auto p-6">
+        <main class="flex-1 overflow-auto p-4 sm:p-6">
           <router-view />
         </main>
       </div>
@@ -23,4 +28,7 @@ import ToastNotification from './components/ToastNotification.vue'
 
 const toast = ref(null)
 provide('toast', toast)
+
+const sidebarOpen = ref(false)
+provide('sidebarOpen', sidebarOpen)
 </script>

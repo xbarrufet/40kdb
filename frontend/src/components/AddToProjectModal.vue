@@ -1,6 +1,6 @@
 <template>
   <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-50" @click.self="$emit('close')">
-    <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 w-full max-w-lg shadow-2xl">
+    <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 sm:p-6 w-full max-w-lg shadow-2xl mx-4 sm:mx-0">
       <h2 class="text-xl font-bold text-amber-400 mb-5">Add to Project</h2>
 
       <div class="space-y-4">

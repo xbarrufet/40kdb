@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-gray-800/50 border-b border-gray-700 px-6 py-2 text-sm text-gray-400 shrink-0">
+  <div class="bg-gray-800/50 border-b border-gray-700 px-4 sm:px-6 py-2 text-sm text-gray-400 shrink-0 overflow-x-auto whitespace-nowrap">
     <template v-for="(crumb, i) in crumbs" :key="i">
       <router-link v-if="crumb.to" :to="crumb.to" class="hover:text-amber-400 transition-colors">
         {{ crumb.label }}

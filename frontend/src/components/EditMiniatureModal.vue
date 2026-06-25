@@ -1,12 +1,12 @@
 <template>
   <div class="fixed inset-0 bg-black/60 flex items-center justify-center z-50" @click.self="$emit('close')">
-    <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 w-full max-w-lg shadow-2xl">
+    <div class="bg-gray-800 border border-gray-700 rounded-xl p-5 sm:p-6 w-full max-w-lg shadow-2xl mx-4 sm:mx-0">
       <h2 class="text-xl font-bold text-amber-400 mb-5">Edit {{ count }} miniatures</h2>
 
       <div class="space-y-4">
         <div>
           <label class="block text-sm text-gray-400 mb-2">State</label>
-          <div class="flex gap-4">
+          <div class="flex flex-wrap gap-3 sm:gap-4">
             <label class="flex items-center gap-2 cursor-pointer"><input type="radio" v-model="state" value="Sprue" class="accent-amber-400" /><span class="text-blue-400">Sprue</span></label>
             <label class="flex items-center gap-2 cursor-pointer"><input type="radio" v-model="state" value="Built" class="accent-amber-400" /><span class="text-yellow-400">Built</span></label>
             <label class="flex items-center gap-2 cursor-pointer"><input type="radio" v-model="state" value="Primed" class="accent-amber-400" /><span class="text-purple-400">Primed</span></label>
@@ -19,7 +19,13 @@
           <input v-model="edition" type="text" placeholder="e.g. 10th" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-amber-400" />
         </div>
 
+        <div>
+          <label class="block text-sm text-gray-400 mb-1">Wargear</label>
+          <input v-model="wargear" type="text" maxlength="80" placeholder="e.g. Bolt Pistol, Chainsword" class="w-full bg-gray-700 border border-gray-600 rounded-lg px-4 py-2.5 text-white focus:outline-none focus:border-amber-400" />
+        </div>
+
         <div class="flex flex-wrap gap-x-6 gap-y-3">
+          <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" v-model="champion" class="accent-amber-400 rounded" /><span class="text-sm text-gray-300">Champion</span></label>
           <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" v-model="basePainted" class="accent-amber-400 rounded" /><span class="text-sm text-gray-300">Base Painted</span></label>
           <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" v-model="baseMagnetized" class="accent-amber-400 rounded" /><span class="text-sm text-gray-300">Base Magnetized</span></label>
           <label class="flex items-center gap-2 cursor-pointer"><input type="checkbox" v-model="original" class="accent-amber-400 rounded" /><span class="text-sm text-gray-300">Original</span></label>
@@ -49,6 +55,8 @@ const first = props.miniatures[0]
 
 const state = ref(first.state)
 const edition = ref(first.edition || '')
+const wargear = ref(first.wargear || '')
+const champion = ref(first.champion)
 const basePainted = ref(first.basePainted)
 const baseMagnetized = ref(first.baseMagnetized)
 const original = ref(first.original)
@@ -59,6 +67,8 @@ const saving = ref(false)
 const hasChanges = () =>
   state.value !== first.state ||
   edition.value !== (first.edition || '') ||
+  wargear.value !== (first.wargear || '') ||
+  champion.value !== first.champion ||
   basePainted.value !== first.basePainted ||
   baseMagnetized.value !== first.baseMagnetized ||
   original.value !== first.original ||
@@ -80,6 +90,8 @@ const save = async () => {
         changes: {
           state: state.value,
           edition: edition.value || '',
+          wargear: wargear.value || '',
+          champion: champion.value,
           basePainted: basePainted.value,
           baseMagnetized: baseMagnetized.value,
           original: original.value,

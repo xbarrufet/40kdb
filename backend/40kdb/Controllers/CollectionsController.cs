@@ -87,7 +87,7 @@ public class CollectionsController : ControllerBase
 
         var miniatures = await _db.Miniatures
             .Where(m => m.UnitId == unitId)
-            .Select(m => new { m.MiniatureId, m.State, m.Edition, m.BasePainted, m.BaseMagnetized, m.Original, m.Proxy, m.DecalsApplied })
+            .Select(m => new { m.MiniatureId, m.State, m.Edition, m.Wargear, m.Champion, m.BasePainted, m.BaseMagnetized, m.Original, m.Proxy, m.DecalsApplied })
             .ToListAsync();
 
         return Ok(new
@@ -114,6 +114,8 @@ public class CollectionsController : ControllerBase
                 UnitId = request.UnitId,
                 State = request.State,
                 Edition = request.Edition,
+                Wargear = request.Wargear,
+                Champion = request.Champion,
                 BasePainted = request.BasePainted,
                 BaseMagnetized = request.BaseMagnetized,
                 Original = request.Original,
@@ -136,6 +138,8 @@ public class CollectionsController : ControllerBase
         {
             miniature.State = request.Changes.State;
             miniature.Edition = request.Changes.Edition;
+            miniature.Wargear = request.Changes.Wargear;
+            miniature.Champion = request.Changes.Champion;
             miniature.BasePainted = request.Changes.BasePainted;
             miniature.BaseMagnetized = request.Changes.BaseMagnetized;
             miniature.Original = request.Changes.Original;
@@ -155,6 +159,8 @@ public class CollectionsController : ControllerBase
 
         miniature.State = request.State;
         miniature.Edition = request.Edition;
+        miniature.Wargear = request.Wargear;
+        miniature.Champion = request.Champion;
         miniature.BasePainted = request.BasePainted;
         miniature.BaseMagnetized = request.BaseMagnetized;
         miniature.Original = request.Original;
@@ -181,6 +187,8 @@ public class CollectionsController : ControllerBase
         public MiniatureState State { get; set; }
         public int Quantity { get; set; }
         public string Edition { get; set; } = "";
+        public string Wargear { get; set; } = "";
+        public bool Champion { get; set; } = false;
         public bool BasePainted { get; set; } = false;
         public bool BaseMagnetized { get; set; } = false;
         public bool Original { get; set; } = true;
@@ -192,6 +200,8 @@ public class CollectionsController : ControllerBase
     {
         public MiniatureState State { get; set; }
         public string Edition { get; set; } = "";
+        public string Wargear { get; set; } = "";
+        public bool Champion { get; set; } = false;
         public bool BasePainted { get; set; } = false;
         public bool BaseMagnetized { get; set; } = false;
         public bool Original { get; set; } = true;

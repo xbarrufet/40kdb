@@ -13,7 +13,7 @@
       </div>
 
       <div v-else>
-        <div class="flex items-center gap-4 px-5 py-2 text-xs text-gray-500 font-medium">
+        <div class="hidden sm:flex items-center gap-4 px-5 py-2 text-xs text-gray-500 font-medium">
           <input
             type="checkbox"
             :checked="selectedIds.length === data.miniatures.length"
@@ -23,6 +23,7 @@
           <span class="min-w-[90px]">Mini</span>
           <span>State</span>
           <span>Edition</span>
+          <span>Wargear</span>
           <span class="ml-auto">
             <button
               v-if="selectedIds.length > 0"
@@ -39,13 +40,13 @@
             v-for="mini in data.miniatures"
             :key="mini.miniatureId"
             :class="[
-              'flex items-center justify-between px-5 py-3 rounded-lg border transition-colors',
+              'flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-4 sm:px-5 py-3 rounded-lg border transition-colors',
               selectedIds.includes(mini.miniatureId)
                 ? 'border-amber-500/40 bg-amber-500/10'
                 : 'border-gray-700 bg-gray-800 hover:border-gray-600'
             ]"
           >
-            <div class="flex items-center gap-4 flex-1">
+            <div class="flex flex-wrap items-center gap-3 flex-1">
               <input
                 type="checkbox"
                 :checked="selectedIds.includes(mini.miniatureId)"
@@ -69,23 +70,34 @@
                 placeholder="Edition"
                 class="w-20 bg-gray-700 border border-gray-600 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-amber-400"
               />
-              <label class="flex items-center gap-1 cursor-pointer text-sm text-gray-400">
+              <input
+                :value="mini.wargear"
+                @change="updateMiniature(mini, { wargear: $event.target.value })"
+                placeholder="Wargear"
+                maxlength="80"
+                class="w-32 bg-gray-700 border border-gray-600 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-amber-400"
+              />
+              <label class="hidden sm:flex items-center gap-1 cursor-pointer text-sm text-gray-400">
+                <input type="checkbox" :checked="mini.champion" @change="updateMiniature(mini, { champion: $event.target.checked })" class="accent-amber-400 rounded" />
+                Champion
+              </label>
+              <label class="hidden sm:flex items-center gap-1 cursor-pointer text-sm text-gray-400">
                 <input type="checkbox" :checked="mini.basePainted" @change="updateMiniature(mini, { basePainted: $event.target.checked })" class="accent-amber-400 rounded" />
                 Base Painted
               </label>
-              <label class="flex items-center gap-1 cursor-pointer text-sm text-gray-400">
+              <label class="hidden sm:flex items-center gap-1 cursor-pointer text-sm text-gray-400">
                 <input type="checkbox" :checked="mini.baseMagnetized" @change="updateMiniature(mini, { baseMagnetized: $event.target.checked })" class="accent-amber-400 rounded" />
                 Magnetized
               </label>
-              <label class="flex items-center gap-1 cursor-pointer text-sm text-gray-400">
+              <label class="hidden sm:flex items-center gap-1 cursor-pointer text-sm text-gray-400">
                 <input type="checkbox" :checked="mini.original" @change="updateMiniature(mini, { original: $event.target.checked })" class="accent-amber-400 rounded" />
                 Original
               </label>
-              <label class="flex items-center gap-1 cursor-pointer text-sm text-gray-400">
+              <label class="hidden sm:flex items-center gap-1 cursor-pointer text-sm text-gray-400">
                 <input type="checkbox" :checked="mini.proxy" @change="updateMiniature(mini, { proxy: $event.target.checked })" class="accent-amber-400 rounded" />
                 Proxy
               </label>
-              <label class="flex items-center gap-1 cursor-pointer text-sm text-gray-400">
+              <label class="hidden sm:flex items-center gap-1 cursor-pointer text-sm text-gray-400">
                 <input type="checkbox" :checked="mini.decalsApplied" @change="updateMiniature(mini, { decalsApplied: $event.target.checked })" class="accent-amber-400 rounded" />
                 Decals
               </label>
@@ -186,6 +198,8 @@ const updateMiniature = async (mini, fields) => {
       body: JSON.stringify({
         state: updated.state,
         edition: updated.edition || '',
+        wargear: updated.wargear || '',
+        champion: updated.champion,
         basePainted: updated.basePainted,
         baseMagnetized: updated.baseMagnetized,
         original: updated.original,

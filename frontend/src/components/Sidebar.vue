@@ -1,5 +1,11 @@
 <template>
-  <aside class="w-56 bg-gray-800 border-r border-gray-700 flex flex-col shrink-0">
+  <aside
+    :class="[
+      'bg-gray-800 border-r border-gray-700 flex flex-col shrink-0 transition-transform duration-200 z-40',
+      'fixed inset-y-0 left-0 w-56 md:static md:translate-x-0',
+      sidebarOpen ? 'translate-x-0' : '-translate-x-full'
+    ]"
+  >
     <nav class="flex-1 py-4">
       <router-link
         to="/"
@@ -45,3 +51,8 @@
     </nav>
   </aside>
 </template>
+
+<script setup>
+import { inject } from 'vue'
+const sidebarOpen = inject('sidebarOpen')
+</script>

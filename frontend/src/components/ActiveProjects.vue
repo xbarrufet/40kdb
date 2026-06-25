@@ -20,7 +20,7 @@
       <p class="text-gray-500">No projects yet.</p>
     </div>
 
-    <div v-else class="flex gap-4">
+    <div v-else class="grid grid-cols-1 md:grid-cols-2 gap-4">
       <router-link
         v-for="project in projects"
         :key="project.projectId"

@@ -3,14 +3,14 @@
     <div v-if="loading" class="text-gray-400">Loading...</div>
 
     <div v-else-if="data">
-      <div class="flex items-center justify-between mb-6 pb-4 border-b border-gray-700">
+      <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 mb-6 pb-4 border-b border-gray-700">
         <div>
-          <h1 class="text-3xl font-bold text-amber-400">{{ data.name }}</h1>
+          <h1 class="text-2xl sm:text-3xl font-bold text-amber-400">{{ data.name }}</h1>
           <span class="text-sm text-gray-400">{{ data.gameName }} &middot; {{ data.factionGroup }}</span>
         </div>
         <button
           @click="showAddModal = true"
-          class="px-4 py-2 bg-amber-500 text-gray-900 font-semibold rounded-lg hover:bg-amber-400 transition-colors"
+          class="px-4 py-2 bg-amber-500 text-gray-900 font-semibold rounded-lg hover:bg-amber-400 transition-colors self-start"
         >
           + Add Miniatures
         </button>
@@ -30,7 +30,7 @@
             <span class="text-white font-medium group-hover:text-amber-400 transition-colors">{{ unit.name }}</span>
             <span class="text-gray-500 text-sm ml-3">{{ unit.category }}</span>
           </router-link>
-          <div class="flex items-center gap-4 text-sm">
+          <div class="flex flex-wrap items-center gap-2 sm:gap-4 text-sm">
             <span class="text-gray-300 font-medium">{{ unit.total }} minis</span>
             <span class="text-blue-400" v-if="unit.sprue > 0">{{ unit.sprue }} sprue</span>
             <span class="text-yellow-400" v-if="unit.built > 0">{{ unit.built }} built</span>

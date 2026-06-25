@@ -72,6 +72,8 @@ public class ProjectsController : ControllerBase
                     pm.Miniature.Original,
                     pm.Miniature.Proxy,
                     pm.Miniature.Edition,
+                    pm.Miniature.Wargear,
+                    pm.Miniature.Champion,
                     pm.AddedAt
                 })
                 .OrderBy(m => m.MiniatureId)

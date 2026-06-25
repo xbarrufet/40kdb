@@ -4,13 +4,13 @@
 
     <div v-else-if="data">
       <div class="mb-6 pb-4 border-b border-gray-700">
-        <div class="flex items-center justify-between">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <div class="flex items-center gap-4">
             <input
               v-model="editName"
               @blur="saveName"
               @keydown.enter="$event.target.blur()"
-              class="text-3xl font-bold text-amber-400 bg-transparent border-b border-transparent hover:border-gray-600 focus:border-amber-400 focus:outline-none px-1"
+              class="text-2xl sm:text-3xl font-bold text-amber-400 bg-transparent border-b border-transparent hover:border-gray-600 focus:border-amber-400 focus:outline-none px-1"
             />
             <span class="text-sm text-gray-400">{{ data.gameName }}</span>
           </div>
@@ -98,7 +98,7 @@
             <div
               v-for="mini in phase.minis"
               :key="mini.miniatureId"
-              class="flex items-center gap-3 px-5 py-2 rounded border border-gray-700 bg-gray-800"
+              class="flex flex-wrap items-center gap-2 sm:gap-3 px-4 sm:px-5 py-2 rounded border border-gray-700 bg-gray-800"
             >
               <input
                 type="checkbox"
@@ -108,6 +108,7 @@
               />
               <span class="text-sm text-gray-400 w-12">#{{ mini.miniatureId }}</span>
               <span class="text-sm text-white flex-1">{{ mini.unitName }}</span>
+              <span v-if="mini.wargear" class="text-xs text-gray-500 italic">{{ mini.wargear }}</span>
               <span class="text-xs text-gray-500">{{ mini.factionName }}</span>
               <select
                 :value="mini.state"
@@ -119,6 +120,10 @@
                 <option value="Primed">Primed</option>
                 <option value="Painted">Painted</option>
               </select>
+              <label class="flex items-center gap-1 cursor-pointer text-xs text-gray-400">
+                <input type="checkbox" :checked="mini.champion" @change="updateMini(mini, { champion: $event.target.checked })" class="accent-amber-400 rounded" />
+                CH
+              </label>
               <label class="flex items-center gap-1 cursor-pointer text-xs text-gray-400">
                 <input type="checkbox" :checked="mini.basePainted" @change="updateMini(mini, { basePainted: $event.target.checked })" class="accent-amber-400 rounded" />
                 BP
@@ -255,15 +260,17 @@ const updateMini = async (mini, fields) => {
   await fetch(`/api/collections/${mini.miniatureId}`, {
     method: 'PUT',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      state: fields.state ?? mini.state,
-      edition: fields.edition ?? '',
-      basePainted: fields.basePainted ?? mini.basePainted,
-      baseMagnetized: fields.baseMagnetized ?? mini.baseMagnetized,
-      original: fields.original ?? mini.original,
-      proxy: fields.proxy ?? mini.proxy,
-      decalsApplied: fields.decalsApplied ?? mini.decalsApplied
-    })
+      body: JSON.stringify({
+        state: fields.state ?? mini.state,
+        edition: fields.edition ?? '',
+        wargear: fields.wargear ?? '',
+        champion: fields.champion ?? mini.champion,
+        basePainted: fields.basePainted ?? mini.basePainted,
+        baseMagnetized: fields.baseMagnetized ?? mini.baseMagnetized,
+        original: fields.original ?? mini.original,
+        proxy: fields.proxy ?? mini.proxy,
+        decalsApplied: fields.decalsApplied ?? mini.decalsApplied
+      })
   })
   Object.assign(mini, fields)
 }
