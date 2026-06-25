@@ -49,7 +49,7 @@ Functional specs are in `/specs`. Each spec is numbered and covers a feature are
 
 ## Data Model
 ```
-Game → Faction → Unit → Miniature
+Game → Faction → Unit → Miniature (with Wargear, Champion fields)
 Project → Phase → ProjectMiniature → Miniature
 ```
 

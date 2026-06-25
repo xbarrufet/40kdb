@@ -170,6 +170,31 @@ public class CollectionsController : ControllerBase
         return Ok();
     }
 
+    [HttpPost("{id}/copy")]
+    public async Task<IActionResult> CopyMiniature(int id)
+    {
+        var source = await _db.Miniatures.FindAsync(id);
+        if (source == null) return NotFound();
+
+        var copy = new Miniature
+        {
+            UnitId = source.UnitId,
+            State = source.State,
+            Edition = source.Edition,
+            Wargear = source.Wargear,
+            Champion = source.Champion,
+            BasePainted = source.BasePainted,
+            BaseMagnetized = source.BaseMagnetized,
+            Original = source.Original,
+            Proxy = source.Proxy,
+            DecalsApplied = source.DecalsApplied
+        };
+
+        _db.Miniatures.Add(copy);
+        await _db.SaveChangesAsync();
+        return Ok();
+    }
+
     [HttpDelete("{id}")]
     public async Task<IActionResult> DeleteMiniature(int id)
     {

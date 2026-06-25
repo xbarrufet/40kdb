@@ -33,7 +33,13 @@ Clicking on it opens the Unit collection page.
 There is an "Add" button that opens the add modal.
 
 ## Unit Collection Page (Miniatures)
-It shows all the minis and its state. Each row can be edited changing the state or any other field, or deleted.
+It shows all the minis and its state. Each row can be edited changing the state or any other field, copied, or deleted.
+
+### Copy Miniature
+Each row has a copy icon (before the delete icon). Clicking it immediately creates an exact clone of the miniature (all fields copied as-is) in the same unit. The miniature list re-fetches from the server after the copy is created.
+
+**API:**
+- `POST /api/collections/{id}/copy` — copies the miniature with the given ID, returns `200 OK`
 
 ### Mass Update
 Each row has a checkbox in the first column. The header contains:
@@ -49,7 +55,7 @@ Selected rows have a distinct background color.
 
 **Modal:**
 - Title: "Edit X miniatures"
-- Same fields as individual edit: State, Edition, BasePainted, BaseMagnetized, Original, Proxy, DecalsApplied
+- Same fields as individual edit: State, Edition, Wargear, Champion, BasePainted, BaseMagnetized, Original, Proxy, DecalsApplied
 - Pre-filled with values from the first selected mini
 - All fields overwrite every selected mini on save
 - Enter to save, Escape to cancel
@@ -71,6 +77,8 @@ In the Collection faction there is a Add button that opens a modal showing:
 - Text box: Number of minis
 - Radio buttons: State (Sprue / Built / Primed / Painted)
 - Text field: Edition
+- Text field: Wargear
+- Checkbox: Champion
 - Checkboxes: Base Painted, Base Magnetized, Original, Proxy, Decals Applied
 - Save and Cancel buttons
 
@@ -103,6 +111,8 @@ public class Miniature
     public bool Original { get; set; } = true;         // miniature is original (not recast/clone)
     public bool Proxy { get; set; } = false;           // the model represents is not the official one
     public bool DecalsApplied { get; set; } = false;   // decals have been applied (if needed)
+    public string Wargear { get; set; } = "";           // wargear equipped on the miniature
+    public bool Champion { get; set; } = false;         // miniature is a champion/character
 }
 ```
 

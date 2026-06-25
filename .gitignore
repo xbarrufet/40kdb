@@ -22,6 +22,10 @@ dist/
 .env.local
 .env.*.local
 
+## SQLite
+*.db-shm
+*.db-wal
+
 ## OS
 .DS_Store
 Thumbs.db
