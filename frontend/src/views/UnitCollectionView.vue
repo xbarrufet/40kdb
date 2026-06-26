@@ -16,14 +16,25 @@
         <div class="hidden sm:flex items-center gap-4 px-5 py-2 text-xs text-gray-500 font-medium">
           <input
             type="checkbox"
-            :checked="selectedIds.length === data.miniatures.length"
+            :checked="selectedIds.length === filteredMiniatures.length"
             @change="toggleAll"
             class="accent-amber-400 rounded"
           />
           <span>Description</span>
           <span>State</span>
           <span>Edition</span>
-          <span class="ml-auto">
+          <div class="flex items-center gap-1 ml-auto">
+            <div class="flex items-center gap-1 mr-3">
+              <button
+                v-for="f in ['all', 'complete', 'incomplete']"
+                :key="f"
+                @click="activeFilter = f"
+                class="px-2 py-1 rounded text-xs transition-colors"
+                :class="activeFilter === f ? 'bg-amber-500 text-gray-900' : 'text-gray-400 hover:text-gray-200'"
+              >
+                {{ f === 'all' ? 'All' : f === 'complete' ? 'Complete' : 'Incomplete' }}
+              </button>
+            </div>
             <button
               v-if="selectedIds.length > 0"
               @click="openEditModal"
@@ -31,12 +42,45 @@
             >
               Edit ({{ selectedIds.length }})
             </button>
-          </span>
+            <div v-if="selectedIds.length > 0" class="relative" ref="projectDropdownRef">
+              <button
+                @click="showProjectDropdown = !showProjectDropdown"
+                class="px-3 py-1 bg-gray-600 text-gray-300 font-semibold rounded hover:bg-gray-500 hover:text-white transition-colors text-xs"
+              >
+                + Project
+              </button>
+              <div
+                v-if="showProjectDropdown"
+                class="absolute right-0 top-full mt-1 w-56 bg-gray-800 border border-gray-600 rounded-lg shadow-xl z-50 overflow-hidden"
+              >
+                <button
+                  @click="startNewProject"
+                  class="w-full text-left px-4 py-2.5 text-sm text-gray-200 hover:bg-gray-700 transition-colors"
+                >
+                  + Create New Project
+                </button>
+                <div class="border-t border-gray-700"></div>
+                <div class="px-4 py-2 text-xs text-gray-500 font-medium">Existing Project</div>
+                <div class="max-h-48 overflow-y-auto">
+                  <button
+                    v-for="p in projects"
+                    :key="p.projectId"
+                    @click="addToExistingProject(p)"
+                    class="w-full text-left px-4 py-2 text-sm text-gray-300 hover:bg-gray-700 transition-colors"
+                  >
+                    {{ p.name }}
+                    <span class="text-gray-500 text-xs ml-1">{{ p.gameName }}</span>
+                  </button>
+                  <div v-if="projects.length === 0" class="px-4 py-2 text-sm text-gray-500">No projects yet</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <div class="space-y-1">
           <div
-            v-for="mini in data.miniatures"
+            v-for="mini in filteredMiniatures"
             :key="mini.miniatureId"
             :class="[
               'flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 px-4 sm:px-5 py-3 rounded-lg border transition-colors',
@@ -138,11 +182,27 @@
       @close="showEditModal = false"
       @saved="onBatchSaved"
     />
+
+    <div v-if="showNewProjectForm" class="fixed inset-0 bg-black/60 flex items-center justify-center z-50">
+      <div class="bg-gray-800 border border-gray-700 rounded-xl p-6 w-full max-w-sm">
+        <h3 class="text-lg font-semibold text-amber-400 mb-4">Create New Project</h3>
+        <input
+          v-model="newProjectName"
+          placeholder="Project name"
+          class="w-full bg-gray-700 border border-gray-600 rounded px-3 py-2 text-white text-sm focus:outline-none focus:border-amber-400 mb-4"
+          @keyup.enter="confirmNewProject"
+        />
+        <div class="flex justify-end gap-2">
+          <button @click="showNewProjectForm = false" class="px-4 py-2 text-sm text-gray-400 hover:text-white transition-colors">Cancel</button>
+          <button @click="confirmNewProject" class="px-4 py-2 text-sm bg-amber-500 text-gray-900 font-semibold rounded hover:bg-amber-400 transition-colors">Create & Add</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { ref, computed, onMounted, watch, inject } from 'vue'
+import { ref, computed, onMounted, watch, inject, onBeforeUnmount } from 'vue'
 import { useRoute } from 'vue-router'
 import EditMiniatureModal from '../components/EditMiniatureModal.vue'
 
@@ -153,6 +213,21 @@ const toast = inject('toast')
 
 const selectedIds = ref([])
 const showEditModal = ref(false)
+const activeFilter = ref('all')
+const showProjectDropdown = ref(false)
+const projectDropdownRef = ref(null)
+const projects = ref([])
+const showNewProjectForm = ref(false)
+const newProjectName = ref('')
+
+const isComplete = (m) => m.state === 'Painted' && m.decalsApplied === true
+
+const filteredMiniatures = computed(() => {
+  if (!data.value?.miniatures) return []
+  if (activeFilter.value === 'complete') return data.value.miniatures.filter(isComplete)
+  if (activeFilter.value === 'incomplete') return data.value.miniatures.filter(m => !isComplete(m))
+  return data.value.miniatures
+})
 
 const sprueCount = computed(() => data.value?.miniatures.filter(m => m.state === 'Sprue').length || 0)
 const builtCount = computed(() => data.value?.miniatures.filter(m => m.state === 'Built').length || 0)
@@ -170,10 +245,11 @@ const toggleSelection = (id) => {
 }
 
 const toggleAll = () => {
-  if (selectedIds.value.length === data.value.miniatures.length) {
+  const filtered = filteredMiniatures.value.map(m => m.miniatureId)
+  if (selectedIds.value.length === filtered.length) {
     selectedIds.value = []
   } else {
-    selectedIds.value = data.value.miniatures.map(m => m.miniatureId)
+    selectedIds.value = [...filtered]
   }
 }
 
@@ -187,6 +263,80 @@ const onBatchSaved = () => {
   selectedIds.value = []
   fetchData(route.params.unitId)
   toast.value?.addToast(`${count} miniatures updated`)
+}
+
+const fetchProjects = async () => {
+  const res = await fetch('/api/projects')
+  projects.value = await res.json()
+}
+
+const startNewProject = () => {
+  showProjectDropdown.value = false
+  newProjectName.value = data.value?.factionName || ''
+  showNewProjectForm.value = true
+}
+
+const confirmNewProject = async () => {
+  const name = newProjectName.value.trim()
+  if (!name) return
+
+  try {
+    const gameId = data.value.gameId
+    const res = await fetch('/api/projects', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ name, gameId, initialPhaseName: 'Phase 1' })
+    })
+    if (!res.ok) throw new Error()
+    const project = await res.json()
+
+    const projRes = await fetch(`/api/projects/${project.projectId}`)
+    const projData = await projRes.json()
+    const phaseId = projData.phases[0].phaseId
+
+    const addRes = await fetch(`/api/projects/${project.projectId}/minis`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phaseId, miniatureIds: selectedIds.value })
+    })
+    if (!addRes.ok) throw new Error()
+
+    toast.value?.addToast(`${selectedIds.value.length} mini(s) added to "${name}"`)
+    selectedIds.value = []
+    showNewProjectForm.value = false
+    fetchData(route.params.unitId)
+  } catch {
+    toast.value?.addToast('Failed to create project', 'error')
+  }
+}
+
+const addToExistingProject = async (project) => {
+  showProjectDropdown.value = false
+
+  try {
+    const projRes = await fetch(`/api/projects/${project.projectId}`)
+    const projData = await projRes.json()
+    const phaseId = projData.phases[0].phaseId
+
+    const res = await fetch(`/api/projects/${project.projectId}/minis`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ phaseId, miniatureIds: selectedIds.value })
+    })
+    if (!res.ok) throw new Error()
+
+    toast.value?.addToast(`${selectedIds.value.length} mini(s) added to "${project.name}"`)
+    selectedIds.value = []
+    fetchData(route.params.unitId)
+  } catch {
+    toast.value?.addToast('Failed to add to project', 'error')
+  }
+}
+
+const handleClickOutside = (e) => {
+  if (projectDropdownRef.value && !projectDropdownRef.value.contains(e.target)) {
+    showProjectDropdown.value = false
+  }
 }
 
 const fetchData = async (unitId) => {
@@ -246,6 +396,11 @@ const deleteMiniature = async (mini) => {
   }
 }
 
-onMounted(() => fetchData(route.params.unitId))
+onMounted(() => {
+  fetchData(route.params.unitId)
+  fetchProjects()
+  document.addEventListener('click', handleClickOutside)
+})
+onBeforeUnmount(() => document.removeEventListener('click', handleClickOutside))
 watch(() => route.params.unitId, (id) => { if (id) fetchData(id) })
 </script>

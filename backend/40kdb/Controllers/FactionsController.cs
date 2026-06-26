@@ -58,7 +58,11 @@ public class FactionsController : ControllerBase
                 u.Name,
                 u.Category,
                 u.Points,
-                MiniatureCount = u.Miniatures.Count
+                MiniatureCount = u.Miniatures.Count,
+                Sprue = u.Miniatures.Count(m => m.State == MiniatureState.Sprue),
+                Built = u.Miniatures.Count(m => m.State == MiniatureState.Built),
+                Primed = u.Miniatures.Count(m => m.State == MiniatureState.Primed),
+                Painted = u.Miniatures.Count(m => m.State == MiniatureState.Painted)
             })
         });
     }

@@ -97,6 +97,7 @@ public class CollectionsController : ControllerBase
             unit.Name,
             unit.Category,
             unit.Points,
+            GameId = unit.Faction!.GameId,
             FactionName = unit.Faction!.Name,
             Miniatures = miniatures
         });
