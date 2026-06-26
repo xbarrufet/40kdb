@@ -20,10 +20,9 @@
             @change="toggleAll"
             class="accent-amber-400 rounded"
           />
-          <span class="min-w-[90px]">Mini</span>
+          <span>Description</span>
           <span>State</span>
           <span>Edition</span>
-          <span>Wargear</span>
           <span class="ml-auto">
             <button
               v-if="selectedIds.length > 0"
@@ -53,7 +52,13 @@
                 @change="toggleSelection(mini.miniatureId)"
                 class="accent-amber-400 rounded"
               />
-              <span class="text-gray-300 text-sm min-w-[90px]">Mini #{{ mini.miniatureId }}</span>
+              <input
+                :value="mini.wargear"
+                @change="updateMiniature(mini, { wargear: $event.target.value })"
+                placeholder="Description"
+                maxlength="80"
+                class="w-40 bg-gray-700 border border-gray-600 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-amber-400"
+              />
               <select
                 :value="mini.state"
                 @change="updateMiniature(mini, { state: $event.target.value })"
@@ -70,13 +75,7 @@
                 placeholder="Edition"
                 class="w-20 bg-gray-700 border border-gray-600 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-amber-400"
               />
-              <input
-                :value="mini.wargear"
-                @change="updateMiniature(mini, { wargear: $event.target.value })"
-                placeholder="Wargear"
-                maxlength="80"
-                class="w-32 bg-gray-700 border border-gray-600 rounded px-3 py-1.5 text-sm text-white focus:outline-none focus:border-amber-400"
-              />
+
               <label class="hidden sm:flex items-center gap-1 cursor-pointer text-sm text-gray-400">
                 <input type="checkbox" :checked="mini.champion" @change="updateMiniature(mini, { champion: $event.target.checked })" class="accent-amber-400 rounded" />
                 Champion
