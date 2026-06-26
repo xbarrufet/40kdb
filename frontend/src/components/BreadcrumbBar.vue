@@ -34,6 +34,19 @@ const crumbs = computed(() => {
     items.push({ label: `Faction #${route.params.factionId}`, to: null })
   }
 
+  if (route.name === 'unit-collection-detail') {
+    items.push({ label: 'Games', to: '/games' })
+    if (route.params.gameId) {
+      items.push({ label: `Game #${route.params.gameId}`, to: `/games/${route.params.gameId}` })
+    }
+    if (route.params.factionId) {
+      items.push({ label: `Faction #${route.params.factionId}`, to: `/games/${route.params.gameId}/factions/${route.params.factionId}` })
+    }
+    if (route.params.unitId) {
+      items.push({ label: `Unit #${route.params.unitId}`, to: null })
+    }
+  }
+
   return items
 })
 </script>

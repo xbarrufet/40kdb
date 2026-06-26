@@ -19,6 +19,7 @@ public class FactionsController : ControllerBase
         var factions = await _db.Factions
             .Where(f => f.GameId == gameId)
             .Include(f => f.Units)
+            .ThenInclude(u => u.Miniatures)
             .Where(f => f.Units.Count > 0)
             .GroupBy(f => f.FactionGroup)
             .Select(g => new
@@ -28,7 +29,8 @@ public class FactionsController : ControllerBase
                 {
                     f.FactionId,
                     f.Name,
-                    UnitCount = f.Units.Count
+                    UnitCount = f.Units.Count,
+                    MiniatureCount = f.Units.SelectMany(u => u.Miniatures).Count()
                 })
             })
             .ToListAsync();
@@ -40,6 +42,7 @@ public class FactionsController : ControllerBase
     {
         var faction = await _db.Factions
             .Include(f => f.Units)
+            .ThenInclude(u => u.Miniatures)
             .FirstOrDefaultAsync(f => f.GameId == gameId && f.FactionId == factionId);
 
         if (faction == null) return NotFound();
@@ -54,7 +57,8 @@ public class FactionsController : ControllerBase
                 u.UnitId,
                 u.Name,
                 u.Category,
-                u.Points
+                u.Points,
+                MiniatureCount = u.Miniatures.Count
             })
         });
     }

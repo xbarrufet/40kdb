@@ -9,16 +9,20 @@
           {{ game.name }}
         </option>
       </select>
+      <label class="flex items-center gap-2 text-sm text-gray-300 cursor-pointer select-none">
+        <input type="checkbox" v-model="showOwned" class="accent-amber-400 rounded" />
+        Show only owned
+      </label>
     </div>
 
     <div v-if="loading" class="text-gray-400">Loading...</div>
 
-    <div v-else-if="factionsByGroup.length === 0" class="text-gray-400">
+    <div v-else-if="filteredFactionsByGroup.length === 0" class="text-gray-400">
       No factions found for this game.
     </div>
 
     <div v-else>
-      <div v-for="group in factionsByGroup" :key="group.group" class="mb-10">
+      <div v-for="group in filteredFactionsByGroup" :key="group.group" class="mb-10">
         <h2 class="text-xl font-bold text-amber-400 mb-4 pb-2 border-b border-gray-700">
           {{ group.group }}
         </h2>
@@ -43,7 +47,7 @@
 </template>
 
 <script setup>
-import { ref, watch, onMounted } from 'vue'
+import { ref, computed, watch, onMounted } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
 const route = useRoute()
@@ -53,6 +57,17 @@ const games = ref([])
 const factionsByGroup = ref([])
 const selectedGameId = ref(null)
 const loading = ref(true)
+const showOwned = ref(false)
+
+const filteredFactionsByGroup = computed(() => {
+  if (!showOwned.value) return factionsByGroup.value
+  return factionsByGroup.value
+    .map(group => ({
+      ...group,
+      factions: group.factions.filter(f => f.miniatureCount > 0)
+    }))
+    .filter(group => group.factions.length > 0)
+})
 
 const fetchGames = async () => {
   const res = await fetch('/api/games')

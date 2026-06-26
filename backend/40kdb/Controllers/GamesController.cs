@@ -30,6 +30,7 @@ public class GamesController : ControllerBase
         var game = await _db.Games
             .Include(g => g.Factions)
             .ThenInclude(f => f.Units)
+            .ThenInclude(u => u.Miniatures)
             .FirstOrDefaultAsync(g => g.GameId == id);
 
         if (game == null) return NotFound();
@@ -43,7 +44,8 @@ public class GamesController : ControllerBase
                 f.FactionId,
                 f.Name,
                 f.FactionGroup,
-                UnitCount = f.Units.Count
+                UnitCount = f.Units.Count,
+                MiniatureCount = f.Units.SelectMany(u => u.Miniatures).Count()
             })
         });
     }

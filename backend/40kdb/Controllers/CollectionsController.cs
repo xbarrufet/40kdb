@@ -71,6 +71,7 @@ public class CollectionsController : ControllerBase
             faction.FactionId,
             faction.Name,
             faction.FactionGroup,
+            faction.GameId,
             GameName = faction.Game!.Name,
             Units = units
         });

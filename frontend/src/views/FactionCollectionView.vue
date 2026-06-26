@@ -26,7 +26,7 @@
           :key="unit.unitId"
           class="flex items-center justify-between px-5 py-3 rounded-lg border border-gray-700 bg-gray-800 hover:border-amber-400 hover:bg-gray-700 transition-all group"
         >
-          <router-link :to="`/collections/units/${unit.unitId}`" class="flex-1 cursor-pointer">
+          <router-link :to="`/collections/games/${data.gameId}/factions/${data.factionId}/units/${unit.unitId}`" class="flex-1 cursor-pointer">
             <span class="text-white font-medium group-hover:text-amber-400 transition-colors">{{ unit.name }}</span>
             <span class="text-gray-500 text-sm ml-3">{{ unit.category }}</span>
           </router-link>

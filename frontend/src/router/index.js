@@ -16,6 +16,7 @@ const routes = [
   { path: '/collections', name: 'collections', component: CollectionsView },
   { path: '/collections/factions/:factionId', name: 'faction-collection', component: FactionCollectionView },
   { path: '/collections/units/:unitId', name: 'unit-collection', component: UnitCollectionView },
+  { path: '/collections/games/:gameId/factions/:factionId/units/:unitId', name: 'unit-collection-detail', component: UnitCollectionView },
   { path: '/projects', name: 'projects', component: ProjectsView },
   { path: '/projects/:id', name: 'project-detail', component: ProjectDetailView },
 ]
