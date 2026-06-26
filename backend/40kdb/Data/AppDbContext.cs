@@ -59,29 +59,34 @@ public class AppDbContext : DbContext
 
     public void SeedFromFiles(string dataPath)
     {
-        if (Games.Any()) return;
-
-        var game = new Game { Name = "Warhammer 40K 11th Edition" };
-        Games.Add(game);
-        SaveChanges();
+        var game = Games.FirstOrDefault();
+        if (game == null)
+        {
+            game = new Game { Name = "Warhammer 40K 11th Edition" };
+            Games.Add(game);
+            SaveChanges();
+        }
 
         var factionsJson = File.ReadAllText(Path.Combine(dataPath, "factions.json"));
         var factionGroups = JsonSerializer.Deserialize<Dictionary<string, List<FactionEntry>>>(factionsJson);
-
         if (factionGroups == null) return;
 
         foreach (var (group, factions) in factionGroups)
         {
             foreach (var factionEntry in factions)
             {
-                var faction = new Faction
+                var faction = Factions.FirstOrDefault(f => f.GameId == game.GameId && f.Name == factionEntry.name);
+                if (faction == null)
                 {
-                    Name = factionEntry.name,
-                    FactionGroup = group,
-                    GameId = game.GameId
-                };
-                Factions.Add(faction);
-                SaveChanges();
+                    faction = new Faction
+                    {
+                        Name = factionEntry.name,
+                        FactionGroup = group,
+                        GameId = game.GameId
+                    };
+                    Factions.Add(faction);
+                    SaveChanges();
+                }
 
                 var unitsFile = Path.Combine(dataPath, $"units_{factionEntry.slug}.json");
                 if (!File.Exists(unitsFile)) continue;
@@ -90,17 +95,27 @@ public class AppDbContext : DbContext
                 var unitsData = JsonSerializer.Deserialize<UnitsFile>(unitsJson);
                 if (unitsData?.units == null) continue;
 
-                foreach (var unitEntry in unitsData.units)
-                {
-                    Units.Add(new Unit
+                var existingNames = Units
+                    .Where(u => u.FactionId == faction.FactionId)
+                    .Select(u => u.Name)
+                    .ToHashSet();
+
+                var newUnits = unitsData.units
+                    .Where(u => !existingNames.Contains(u.name))
+                    .Select(u => new Unit
                     {
-                        Name = unitEntry.name,
-                        Category = unitEntry.category,
-                        Points = int.TryParse(unitEntry.points, out var pts) ? pts : 0,
+                        Name = u.name,
+                        Category = u.category,
+                        Points = int.TryParse(u.points, out var pts) ? pts : 0,
                         FactionId = faction.FactionId
-                    });
+                    })
+                    .ToList();
+
+                if (newUnits.Count > 0)
+                {
+                    Units.AddRange(newUnits);
+                    SaveChanges();
                 }
-                SaveChanges();
             }
         }
     }
