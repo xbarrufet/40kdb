@@ -1,7 +1,7 @@
 {
   "faction": "Necrons",
   "slug": "necrons",
-  "units_count": 22,
+  "units_count": 52,
   "units": [
     {
       "name": "C’tan Shard of the Deceiver",
@@ -25,6 +25,48 @@
       "points": "345"
     },
     {
+      "name": "Illuminor Szeras",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/illuminor-szeras",
+      "slug": "illuminor-szeras",
+      "points": "175"
+    },
+    {
+      "name": "Imotekh the Stormlord",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/imotekh-the-stormlord",
+      "slug": "imotekh-the-stormlord",
+      "points": "100"
+    },
+    {
+      "name": "Nekrosor Ammentar",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/nekrosor-ammentar",
+      "slug": "nekrosor-ammentar",
+      "points": "175"
+    },
+    {
+      "name": "Orikan the Diviner",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/orikan-the-diviner",
+      "slug": "orikan-the-diviner",
+      "points": "90"
+    },
+    {
+      "name": "The Silent King",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/the-silent-king",
+      "slug": "the-silent-king",
+      "points": "400"
+    },
+    {
+      "name": "Trazyn the Infinite",
+      "category": "Epic heroes",
+      "url": "https://www.40k.app/factions/necrons/units/trazyn-the-infinite",
+      "slug": "trazyn-the-infinite",
+      "points": "65"
+    },
+    {
       "name": "Catacomb Command Barge",
       "category": "Leaders & Characters",
       "url": "https://www.40k.app/factions/necrons/units/catacomb-command-barge",
@@ -44,6 +86,76 @@
       "url": "https://www.40k.app/factions/necrons/units/geomancer",
       "slug": "geomancer",
       "points": "75"
+    },
+    {
+      "name": "Hexmark Destroyer",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/hexmark-destroyer",
+      "slug": "hexmark-destroyer",
+      "points": "75"
+    },
+    {
+      "name": "Lokhust Lord",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/lokhust-lord",
+      "slug": "lokhust-lord",
+      "points": "70"
+    },
+    {
+      "name": "Overlord",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/overlord",
+      "slug": "overlord",
+      "points": "90"
+    },
+    {
+      "name": "Overlord with Translocation Shroud",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/overlord-with-translocation-shroud",
+      "slug": "overlord-with-translocation-shroud",
+      "points": "90"
+    },
+    {
+      "name": "Plasmancer",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/plasmancer",
+      "slug": "plasmancer",
+      "points": "55"
+    },
+    {
+      "name": "Psychomancer",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/psychomancer",
+      "slug": "psychomancer",
+      "points": "55"
+    },
+    {
+      "name": "Royal Warden",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/royal-warden",
+      "slug": "royal-warden",
+      "points": "50"
+    },
+    {
+      "name": "Skorpekh Lord",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/skorpekh-lord",
+      "slug": "skorpekh-lord",
+      "points": "90"
+    },
+    {
+      "name": "Technomancer",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/technomancer",
+      "slug": "technomancer",
+      "points": "80"
+    },
+    {
+      "name": "Transcendent C’tan",
+      "category": "Leaders & Characters",
+      "url": "https://www.40k.app/factions/necrons/units/transcendent-ctan",
+      "slug": "transcendent-ctan",
+      "points": "340"
     },
     {
       "name": "Immortals",
@@ -102,6 +214,62 @@
       "points": "50"
     },
     {
+      "name": "Canoptek Wraiths",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/canoptek-wraiths",
+      "slug": "canoptek-wraiths",
+      "points": "95"
+    },
+    {
+      "name": "Cryptothralls",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/cryptothralls",
+      "slug": "cryptothralls",
+      "points": "60"
+    },
+    {
+      "name": "Deathmarks",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/deathmarks",
+      "slug": "deathmarks",
+      "points": "60"
+    },
+    {
+      "name": "Flayed Ones",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/flayed-ones",
+      "slug": "flayed-ones",
+      "points": "55"
+    },
+    {
+      "name": "Lychguard",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/lychguard",
+      "slug": "lychguard",
+      "points": "80"
+    },
+    {
+      "name": "Ophydian Destroyers",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/ophydian-destroyers",
+      "slug": "ophydian-destroyers",
+      "points": "80"
+    },
+    {
+      "name": "Skorpekh Destroyers",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/skorpekh-destroyers",
+      "slug": "skorpekh-destroyers",
+      "points": "85"
+    },
+    {
+      "name": "Triarch Praetorians",
+      "category": "Infantry, Swarms, Beasts",
+      "url": "https://www.40k.app/factions/necrons/units/triarch-praetorians",
+      "slug": "triarch-praetorians",
+      "points": "80"
+    },
+    {
       "name": "Doom Scythe",
       "category": "Aircraft",
       "url": "https://www.40k.app/factions/necrons/units/doom-scythe",
@@ -130,6 +298,13 @@
       "points": "540"
     },
     {
+      "name": "Tesseract Vault",
+      "category": "Titanic",
+      "url": "https://www.40k.app/factions/necrons/units/tesseract-vault",
+      "slug": "tesseract-vault",
+      "points": "445"
+    },
+    {
       "name": "Ghost Ark",
       "category": "Dedicated Transports",
       "url": "https://www.40k.app/factions/necrons/units/ghost-ark",
@@ -156,6 +331,41 @@
       "url": "https://www.40k.app/factions/necrons/units/canoptek-reanimator",
       "slug": "canoptek-reanimator",
       "points": "70"
+    },
+    {
+      "name": "Canoptek Spyders",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/necrons/units/canoptek-spyders",
+      "slug": "canoptek-spyders",
+      "points": "65"
+    },
+    {
+      "name": "Convergence of Dominion",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/necrons/units/convergence-of-dominion",
+      "slug": "convergence-of-dominion",
+      "points": "60"
+    },
+    {
+      "name": "Doomsday Ark",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/necrons/units/doomsday-ark",
+      "slug": "doomsday-ark",
+      "points": "200"
+    },
+    {
+      "name": "Night Scythe",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/necrons/units/night-scythe",
+      "slug": "night-scythe",
+      "points": "125"
+    },
+    {
+      "name": "Triarch Stalker",
+      "category": "Vehicles, Monsters",
+      "url": "https://www.40k.app/factions/necrons/units/triarch-stalker",
+      "slug": "triarch-stalker",
+      "points": "110"
     }
   ]
 }
